@@ -57,6 +57,7 @@ struct TicketSelectView: View {
                 
                 
                 ZStack {
+
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack(spacing: 16) {
                             ForEach(viewModel.tickets) { ticket in
@@ -64,6 +65,56 @@ struct TicketSelectView: View {
                             }
                         }
                         .offset(y: 8)
+                    }
+                    
+                    VStack {
+                        Spacer()
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                
+                            }) {
+                                HStack(spacing: 4) {
+                                    VStack{
+                                        Image("filters_icon")
+                                            .resizable(resizingMode: .stretch)
+                                            .foregroundColor(Color.white)
+                                            .frame(width: 12, height: 11)
+                                    }
+                                    .frame(width: 16, height: 16)
+                                    Text("Фильтр")
+                                        .foregroundColor(Color.white)
+                                        .font(.custom("SF Pro Display", size: 14))
+                                        .fontWeight(.regular)
+                                        .lineSpacing(16.8 - 14)
+                                }
+                                
+                            }
+                            Button(action: {
+                                
+                            }) {
+                                HStack(spacing: 4) {
+                                    VStack{
+                                        Image("price_icon")
+                                            .resizable(resizingMode: .stretch)
+                                            .foregroundColor(Color.white)
+                                            .frame(width: 14, height: 13)
+                                    }
+                                    .frame(width: 16, height: 16)
+                                    Text("График цен")
+                                        .foregroundColor(Color.white)
+                                        .font(.custom("SF Pro Display", size: 14))
+                                        .fontWeight(.regular)
+                                        .lineSpacing(16.8 - 14)
+                                }
+                                
+                            }
+                        }
+                        .padding(.horizontal, 10)
+                        .frame(width: 205, height: 37)
+                        .background(Color(red: 34/255, green: 97/255, blue: 188/255))
+                        .cornerRadius(50)
+                        .offset(y: -16)
+                       
                     }
                     
                 }
